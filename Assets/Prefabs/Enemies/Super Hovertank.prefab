@@ -14525,6 +14525,7 @@ GameObject:
   - component: {fileID: 54954296514567692}
   - component: {fileID: 82464293457267712}
   - component: {fileID: 65159708320296242}
+  - component: {fileID: 1374933731}
   m_Layer: 11
   m_Name: Super Hovertank
   m_TagString: Untagged
@@ -14539,7 +14540,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271389358909432}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14698,6 +14699,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5191112, y: 0.7688527, z: 2.1745498}
   m_Center: {x: -0.012941241, y: 0.61869645, z: 0.019012332}
+--- !u!114 &1374933731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271389358909432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e068dbb0fa8615d47b7ed7ce7623ac2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Path: {fileID: 0}
 --- !u!1 &1335503300466980
 GameObject:
   m_ObjectHideFlags: 0

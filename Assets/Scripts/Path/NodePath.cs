@@ -7,8 +7,13 @@ public class NodePath : MonoBehaviour
 {
     public Color color;
     public float nodeRadius = 1;
-    public Transform[] waypoints;
+    public Node[] waypoints;
 
+    public Node GetNode(int index)
+    {
+        return waypoints[index];
+    }
+    
     private void OnDrawGizmos()
     {
         if (waypoints != null && waypoints.Length > 0)
