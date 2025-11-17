@@ -570,6 +570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4958392881172934}
+  - component: {fileID: -4061268514012021545}
   m_Layer: 10
   m_Name: SuperTower_0
   m_TagString: Untagged
@@ -596,6 +597,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4061268514012021545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759168881962760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54561013ccd44843bb451eeecda08f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildEffect: {fileID: 0}
+  levelData:
+    cost: 0
+    sell: 0
+    maxHealth: 0
+    icon: {fileID: 21300000, guid: d6c11b9a43dfb413b86a3ff8908088db, type: 3}
 --- !u!1 &1812292035156056
 GameObject:
   m_ObjectHideFlags: 0

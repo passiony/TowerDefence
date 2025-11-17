@@ -4776,6 +4776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4123545054233330}
+  - component: {fileID: -5157496363232258272}
   m_Layer: 10
   m_Name: LaserTower_0
   m_TagString: Untagged
@@ -4802,6 +4803,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5157496363232258272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161251386251526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54561013ccd44843bb451eeecda08f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildEffect: {fileID: 0}
+  levelData:
+    cost: 1
+    sell: 1
+    maxHealth: 1
+    icon: {fileID: 21300000, guid: 53652022b1d444a5c9e9630488e44e13, type: 3}
 --- !u!1 &1213524718981924
 GameObject:
   m_ObjectHideFlags: 0

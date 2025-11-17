@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 54237919896436098}
   - component: {fileID: 208603321121614042}
   - component: {fileID: 82478060274950908}
+  - component: {fileID: -5877753348201863750}
   m_Layer: 10
   m_Name: EMP
   m_TagString: Untagged
@@ -603,3 +604,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &-5877753348201863750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691257490863768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05998da67a04174ac6372ca52dc8647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerName: 
+  MaxHP: 0
+  HP: 0
+  level: 0
+  towerGhostPrefab: {fileID: 775019023329221614, guid: 7b178c9d97ec54b49b7599e7f7560475,
+    type: 3}
+  levels:
+  - {fileID: 5678419485808706907, guid: ec315e78452fd456db9e789f88989b97, type: 3}
+  - {fileID: -1688730657873689698, guid: c9e418a92827544b2a387ff2938291ec, type: 3}
+  - {fileID: -7326027477587471100, guid: d8faacfa67b8d4af8b5a81028390f02b, type: 3}
+  Dimensions: {x: 0, y: 0}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0

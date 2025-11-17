@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 65375948210591092}
   - component: {fileID: 208292444529820008}
   - component: {fileID: 82070943599190382}
+  - component: {fileID: 8730910927466580951}
   m_Layer: 10
   m_Name: RocketTower
   m_TagString: Untagged
@@ -409,6 +410,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &8730910927466580951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783522996967570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05998da67a04174ac6372ca52dc8647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerName: 
+  MaxHP: 0
+  HP: 0
+  level: 0
+  towerGhostPrefab: {fileID: 340013603913527327, guid: a97cb849a741c434a91e947709d0fb71,
+    type: 3}
+  levels:
+  - {fileID: -4827201438892196113, guid: afd8cfe3809484aac81a3f4f39b80ca5, type: 3}
+  - {fileID: -95538853734927956, guid: d27f6679851c34749ae69788eccdf5bf, type: 3}
+  - {fileID: 4539011525182383836, guid: 6ba60f4aca23b4104b6b59612a245cc3, type: 3}
+  Dimensions: {x: 2, y: 2}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1969286090395172
 GameObject:
   m_ObjectHideFlags: 0

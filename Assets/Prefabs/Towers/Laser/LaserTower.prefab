@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 65894491822834668}
   - component: {fileID: 208075326523738980}
   - component: {fileID: 82184954398703546}
+  - component: {fileID: -3149236543616219591}
   m_Layer: 10
   m_Name: LaserTower
   m_TagString: Untagged
@@ -275,6 +276,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &-3149236543616219591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444973102034290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05998da67a04174ac6372ca52dc8647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerName: 
+  MaxHP: 0
+  HP: 0
+  level: 0
+  towerGhostPrefab: {fileID: -475574354198890454, guid: 21ab440aa6ad440439b50d4a44077fba,
+    type: 3}
+  levels:
+  - {fileID: -5157496363232258272, guid: 6f6de38bc4946428ab2a1d468039753e, type: 3}
+  - {fileID: 7142113413151219258, guid: b75eb6f554ae040cbaaf7df021b2ce06, type: 3}
+  - {fileID: 3364659975907821799, guid: 44a5e9d3e0fb149659199dc573e7b5a4, type: 3}
+  Dimensions: {x: 0, y: 0}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1533647513546944
 GameObject:
   m_ObjectHideFlags: 0
