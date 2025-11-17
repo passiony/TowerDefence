@@ -7,6 +7,7 @@ public class LevelData
     public int cost;
     public int sell;
     public int maxHealth;
+    public Sprite icon;
 }
 
 public class TowerLevel : MonoBehaviour
