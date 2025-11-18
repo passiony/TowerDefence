@@ -14,4 +14,9 @@ public class TowerLevel : MonoBehaviour
 {
     public GameObject buildEffect;
     public LevelData levelData;
+
+    public void Initialize(Tower tower, object enemyLayerMask, object alignmentProvider)
+    {
+        
+    }
 }

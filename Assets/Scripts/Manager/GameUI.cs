@@ -46,7 +46,7 @@ public class GameUI : MonoSingleton<GameUI>
                 m_CurrentArea = hit.collider.GetComponent<TowerPlacementGrid>();
                 if (m_CurrentArea != null)
                 {
-                    var dimensions = m_CurrentTower.controller.Dimensions;
+                    var dimensions = m_CurrentTower.controller.dimensions;
                     m_GridPosition = m_CurrentArea.WorldToGrid(hit.point, dimensions);
                     m_IsFitArea = m_CurrentArea.Fits(m_GridPosition, dimensions);
                     m_CurrentTower.Move(m_CurrentArea.GridToWorld(m_GridPosition, dimensions), m_CurrentArea.transform.rotation, m_IsFitArea);
@@ -61,6 +61,9 @@ public class GameUI : MonoSingleton<GameUI>
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     void TryPlaceTower()
     {
         if (m_CurrentTower == null)
@@ -68,6 +71,11 @@ public class GameUI : MonoSingleton<GameUI>
             return;
         }
 
+        if (!m_IsFitArea)
+        {
+            return;
+        }
+        
         isBuilding = false;
         int cost = m_CurrentTower.controller.purchaseCost;
         bool successfulPurchase = LevelManager.Instance.currency.TryPurchase(cost);
@@ -78,5 +86,6 @@ public class GameUI : MonoSingleton<GameUI>
             createdTower.Initialize(m_CurrentArea, m_GridPosition);
             CancelGhostPlacement();
         }
+        
     }
 }

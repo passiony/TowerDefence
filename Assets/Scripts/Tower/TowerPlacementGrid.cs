@@ -94,7 +94,20 @@ public class TowerPlacementGrid : MonoBehaviour, IPlacementArea
 
     public void Occupy(Vector2Int gridPos, Vector2Int size)
     {
+        Vector2Int extents = gridPos + size;
         
+        // Fill those positions
+        for (int y = gridPos.y; y < extents.y; y++)
+        {
+            for (int x = gridPos.x; x < extents.x; x++)
+            {
+                m_AvailableCells[x, y] = true;
+                if (m_Tiles != null && m_Tiles[x, y] != null)
+                {
+                    m_Tiles[x, y].SetState(true);
+                }
+            }
+        }
     }
 
     public void Clear(Vector2Int gridPos, Vector2Int size)
