@@ -4733,7 +4733,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9eeda62a73aff4818af7e5b2f9126959, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9591,7 +9590,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a78dd0f6e2aa54870b8ced4051fd71e0, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14349,7 +14347,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b5e0b3982ded947cda17890e729362aa, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23944,7 +23941,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9eeda62a73aff4818af7e5b2f9126959, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -33698,7 +33694,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38588,7 +38583,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 92fbbb607856b484295b0810d1baecac, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43350,7 +43344,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b5e0b3982ded947cda17890e729362aa, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43410,6 +43403,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4966141693256532}
+  - component: {fileID: 6842893686915364160}
+  - component: {fileID: 4594833742179234202}
   m_Layer: 10
   m_Name: Affector
   m_TagString: Untagged
@@ -43432,6 +43427,37 @@ Transform:
   m_Father: {fileID: 4795219791600268}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6842893686915364160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707330884675002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b97103795646ccb3f52f0ce89f2971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4594833742179234202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707330884675002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79a9d5ecd9b4e6d9d7491bf7ae6d06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1977158881363050, guid: b478dc57751e64614acb9e2707cdd30c, type: 3}
+  projectilePoints:
+  - {fileID: 4457715277627928}
+  epicenter: {fileID: 4877050138446582}
+  isMultiAttack: 0
+  fireRate: 4
+  towerTargetter: {fileID: 3973294074902709582}
 --- !u!1 &1860257489135870
 GameObject:
   m_ObjectHideFlags: 0
@@ -43524,7 +43550,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4561687637155890}
-  - component: {fileID: 136509027624203670}
+  - component: {fileID: 3737159382248719748}
+  - component: {fileID: 3973294074902709582}
   m_Layer: 12
   m_Name: Targetter
   m_TagString: Untagged
@@ -43547,17 +43574,30 @@ Transform:
   m_Father: {fileID: 4795219791600268}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &136509027624203670
-CapsuleCollider:
+--- !u!135 &3737159382248719748
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984670136723576}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 8
-  m_Height: 20
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3973294074902709582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984670136723576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921b183015034fc42ace5ca52d1a444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 4877050138446582}
+  camp: 0

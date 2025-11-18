@@ -28936,6 +28936,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4689854589790584}
+  - component: {fileID: 2049565484316065726}
+  - component: {fileID: 2055010206796810366}
   m_Layer: 10
   m_Name: Affector
   m_TagString: Untagged
@@ -28958,6 +28960,38 @@ Transform:
   m_Father: {fileID: 4737672716932362}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049565484316065726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704522568323460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b97103795646ccb3f52f0ce89f2971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2055010206796810366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704522568323460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79a9d5ecd9b4e6d9d7491bf7ae6d06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1977158881363050, guid: 9a969581f91304a83a4e17feada0ea86, type: 3}
+  projectilePoints:
+  - {fileID: 4575828760328406}
+  - {fileID: 4195283445768172}
+  epicenter: {fileID: 4221898185616454}
+  isMultiAttack: 0
+  fireRate: 8
+  towerTargetter: {fileID: 4507666365072840550}
 --- !u!1 &1788557851062624
 GameObject:
   m_ObjectHideFlags: 0
@@ -33931,7 +33965,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4327156496806766}
-  - component: {fileID: 136819452830116608}
+  - component: {fileID: 7774742638599545152}
+  - component: {fileID: 4507666365072840550}
   m_Layer: 12
   m_Name: Targetter
   m_TagString: Untagged
@@ -33954,20 +33989,33 @@ Transform:
   m_Father: {fileID: 4737672716932362}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &136819452830116608
-CapsuleCollider:
+--- !u!135 &7774742638599545152
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826625888503934}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 10
-  m_Height: 24
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4507666365072840550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826625888503934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921b183015034fc42ace5ca52d1a444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 4221898185616454}
+  camp: 0
 --- !u!1 &1892472432189134
 GameObject:
   m_ObjectHideFlags: 0

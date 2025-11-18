@@ -29085,6 +29085,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4217891892028684}
+  - component: {fileID: 4854495070171724564}
+  - component: {fileID: 6935286504072442856}
   m_Layer: 10
   m_Name: Affector
   m_TagString: Untagged
@@ -29107,6 +29109,37 @@ Transform:
   m_Father: {fileID: 4187985146200546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4854495070171724564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767268912863362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b97103795646ccb3f52f0ce89f2971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6935286504072442856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767268912863362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79a9d5ecd9b4e6d9d7491bf7ae6d06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1977158881363050, guid: d4adf9c8934b64b29944074ece71bf10, type: 3}
+  projectilePoints:
+  - {fileID: 4129159134802836}
+  epicenter: {fileID: 4861835295132458}
+  isMultiAttack: 0
+  fireRate: 6
+  towerTargetter: {fileID: 2182461197216523136}
 --- !u!1 &1823473106924508
 GameObject:
   m_ObjectHideFlags: 0
@@ -38749,7 +38782,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4189243939151832}
-  - component: {fileID: 136094170658088802}
+  - component: {fileID: 3550330079854165215}
+  - component: {fileID: 2182461197216523136}
   m_Layer: 12
   m_Name: Targetter
   m_TagString: Untagged
@@ -38772,20 +38806,33 @@ Transform:
   m_Father: {fileID: 4187985146200546}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &136094170658088802
-CapsuleCollider:
+--- !u!135 &3550330079854165215
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959428877000262}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 8
-  m_Height: 20
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2182461197216523136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959428877000262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921b183015034fc42ace5ca52d1a444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 4861835295132458}
+  camp: 0
 --- !u!1 &1977154598386958
 GameObject:
   m_ObjectHideFlags: 0
