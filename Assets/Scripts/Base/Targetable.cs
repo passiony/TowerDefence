@@ -12,4 +12,6 @@ public class Targetable : DamageableBehaviour
             targetTransform = transform;
         }
     }
+    
+    public  Vector3 position => targetTransform.position;
 }

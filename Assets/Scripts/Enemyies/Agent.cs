@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 
-public class Enemy : MonoBehaviour
+public class Agent : Targetable
 {
     private NavMeshAgent m_Agent;
     public NodePath Path;

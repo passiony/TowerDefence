@@ -37,6 +37,6 @@ public class Wave : MonoBehaviour
         Vector3 spawnPosition = node.transform.position;
         var agentInstance = GameObject.Instantiate(agent);
         agentInstance.transform.position = spawnPosition;
-        agentInstance.GetComponent<Enemy>().Path = m_Path;
+        agentInstance.GetComponent<Agent>().Path = m_Path;
     }
 }

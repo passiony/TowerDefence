@@ -13,4 +13,16 @@ public class DamageableBehaviour : MonoBehaviour
     public event Action<DamageableBehaviour> removed;
 
     public event Action<DamageableBehaviour> died;
+    
+    public virtual void TakeDamage(float damageValue, Vector3 damagePoint, ECamp camp)
+    {
+        HealthChangeInfo info;
+        configuration.TakeDamage(damageValue, camp, out info);
+        var damageInfo = new HitInfo(info, damagePoint);
+        if (hit != null)
+        {
+            hit(damageInfo);
+        }
+    }
+
 }
