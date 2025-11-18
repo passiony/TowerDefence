@@ -6,7 +6,7 @@ public class GameUI : MonoSingleton<GameUI>
 {
     private TowerPlacementGhost m_CurrentTower;
 
-    [FormerlySerializedAs("m_IisFitArea")] [FormerlySerializedAs("isFitArea")] public bool m_IsFitArea;
+    public bool m_IsFitArea;
     public bool isBuilding;
     private TowerPlacementGrid m_CurrentArea;
     private Vector2Int m_GridPosition;
@@ -39,8 +39,10 @@ public class GameUI : MonoSingleton<GameUI>
         if (isBuilding)
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            int layerMask = LayerMask.GetMask("PlacementLayer", "Default");
+            if (Physics.Raycast(ray, out RaycastHit hit, 100, layerMask))
             {
+                Debug.Log(hit.collider.name);
                 m_CurrentTower.transform.position = hit.point;
 
                 m_CurrentArea = hit.collider.GetComponent<TowerPlacementGrid>();
@@ -49,8 +51,9 @@ public class GameUI : MonoSingleton<GameUI>
                     var dimensions = m_CurrentTower.controller.dimensions;
                     m_GridPosition = m_CurrentArea.WorldToGrid(hit.point, dimensions);
                     m_IsFitArea = m_CurrentArea.Fits(m_GridPosition, dimensions);
-                    m_CurrentTower.Move(m_CurrentArea.GridToWorld(m_GridPosition, dimensions), m_CurrentArea.transform.rotation, m_IsFitArea);
-                    
+                    m_CurrentTower.Move(m_CurrentArea.GridToWorld(m_GridPosition, dimensions),
+                        m_CurrentArea.transform.rotation, m_IsFitArea);
+
                     //点击防止炮塔
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -75,7 +78,7 @@ public class GameUI : MonoSingleton<GameUI>
         {
             return;
         }
-        
+
         isBuilding = false;
         int cost = m_CurrentTower.controller.purchaseCost;
         bool successfulPurchase = LevelManager.Instance.currency.TryPurchase(cost);
@@ -86,6 +89,5 @@ public class GameUI : MonoSingleton<GameUI>
             createdTower.Initialize(m_CurrentArea, m_GridPosition);
             CancelGhostPlacement();
         }
-        
     }
 }
