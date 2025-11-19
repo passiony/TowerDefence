@@ -43439,6 +43439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b97103795646ccb3f52f0ce89f2971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireParticleSystem: {fileID: 198895463405124220}
 --- !u!114 &4594833742179234202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43601,3 +43602,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 4877050138446582}
   camp: 0
+  m_TargetsInRange: []
+  searchRate: 0

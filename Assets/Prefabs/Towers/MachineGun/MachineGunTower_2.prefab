@@ -28972,6 +28972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b97103795646ccb3f52f0ce89f2971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireParticleSystem: {fileID: 198390180065484028}
 --- !u!114 &2055010206796810366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34016,6 +34017,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 4221898185616454}
   camp: 0
+  m_TargetsInRange: []
+  searchRate: 0
 --- !u!1 &1892472432189134
 GameObject:
   m_ObjectHideFlags: 0

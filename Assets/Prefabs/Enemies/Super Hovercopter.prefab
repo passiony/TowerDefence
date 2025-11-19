@@ -29128,6 +29128,7 @@ GameObject:
   - component: {fileID: 54135300629997764}
   - component: {fileID: 82899973237940640}
   - component: {fileID: 136043246709112900}
+  - component: {fileID: -5635086411264803056}
   m_Layer: 14
   m_Name: Super Hovercopter
   m_TagString: Untagged
@@ -29303,6 +29304,24 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &-5635086411264803056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567776943554846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e068dbb0fa8615d47b7ed7ce7623ac2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  configuration:
+    maxHealth: 5
+    startingHealth: 5
+    camp: 1
+  targetTransform: {fileID: 0}
+  Path: {fileID: 0}
 --- !u!1 &1614495679255888
 GameObject:
   m_ObjectHideFlags: 0

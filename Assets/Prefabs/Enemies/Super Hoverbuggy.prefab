@@ -14641,6 +14641,7 @@ GameObject:
   - component: {fileID: 54888612580958166}
   - component: {fileID: 82094088292764670}
   - component: {fileID: 136866353072794800}
+  - component: {fileID: -5368512074755640572}
   m_Layer: 11
   m_Name: Super Hoverbuggy
   m_TagString: Untagged
@@ -14816,6 +14817,24 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.42, z: 0}
+--- !u!114 &-5368512074755640572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511114609136056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e068dbb0fa8615d47b7ed7ce7623ac2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  configuration:
+    maxHealth: 5
+    startingHealth: 5
+    camp: 1
+  targetTransform: {fileID: 0}
+  Path: {fileID: 0}
 --- !u!1 &1534043476352706
 GameObject:
   m_ObjectHideFlags: 0
