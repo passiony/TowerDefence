@@ -42,6 +42,6 @@ public class DamageableBehaviour : MonoBehaviour
     public virtual void OnRemoved()
     {
         configuration.SetHealth(0);
-        removed.Invoke(this);
+        removed?.Invoke(this);
     }
 }
