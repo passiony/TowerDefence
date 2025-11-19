@@ -5,8 +5,9 @@ public class Targetable : DamageableBehaviour
 {
     public Transform targetTransform;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if (targetTransform == null)
         {
             targetTransform = transform;

@@ -11,10 +11,6 @@ public class HItscanProjectitle : MonoBehaviour
         m_Damager = GetComponent<Damager>();
     }
 
-    private void Start()
-    {
-        DealDamage();
-    }
 
     protected void DealDamage()
     {
@@ -25,5 +21,11 @@ public class HItscanProjectitle : MonoBehaviour
 
         m_Enemy.TakeDamage(m_Damager.damage, m_Enemy.position, m_Damager.camp);
         Destroy(gameObject);
+    }
+
+    public void FireAtTarget(Vector3 startPosition, Targetable enemy)
+    {
+        m_Enemy = enemy;
+        DealDamage();
     }
 }

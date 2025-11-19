@@ -50,7 +50,6 @@ public class Tower : Targetable
         }
         // instantiate the visual representation
         currentTowerLevel = Instantiate(levels[currentLevel], transform);
-
         currentTowerLevel.Initialize(this, enemyLayerMask, configuration.camp);
 
         ScaleHealth();

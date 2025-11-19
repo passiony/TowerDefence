@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 public class Agent : Targetable
 {
-    private NavMeshAgent m_Agent;
+    private NavMeshAgent m_NavMeshAgent;
     public NodePath Path;
     private int nodeIndex;
     private bool startMove;
     
     void Start()
     {
-        m_Agent = GetComponent<NavMeshAgent>();
+        m_NavMeshAgent = GetComponent<NavMeshAgent>();
         StartMove();
     }
     
@@ -21,7 +20,7 @@ public class Agent : Targetable
     {
         nodeIndex = 0;
         var target = Path.waypoints[nodeIndex];
-        m_Agent.SetDestination(target.position);
+        m_NavMeshAgent.SetDestination(target.position);
         startMove = true;
     }
     
@@ -31,7 +30,7 @@ public class Agent : Targetable
         if (nodeIndex < Path.waypoints.Length)
         {
             var target = Path.waypoints[nodeIndex];
-            m_Agent.SetDestination(target.position);
+            m_NavMeshAgent.SetDestination(target.position);
         }
     }
     
@@ -39,10 +38,18 @@ public class Agent : Targetable
     {
         if (startMove)
         {
-            if (m_Agent.remainingDistance <= m_Agent.stoppingDistance)
+            if (m_NavMeshAgent.remainingDistance <= m_NavMeshAgent.stoppingDistance)
             {
                 MoveNext();
             }
         }
+    }
+        
+    public override void OnRemoved()
+    {
+        base.OnRemoved();
+        m_NavMeshAgent.isStopped = true;
+        m_NavMeshAgent.enabled = false;
+        Destroy(gameObject);
     }
 }

@@ -5,18 +5,19 @@
     /// </summary>
     public class HitscanLauncher:Launcher
     {
+        public ParticleSystem fireParticleSystem;
+        
         public override void Launch(Targetable enemy, GameObject attack, Transform firingPoint)
         {
-            // Vector3 startPosition = firingPoint.position;
-            // var hitscanProjectile = attack.GetComponent<HitscanProjectile>();
-            // if (hitscanProjectile == null)
-            // {
-            //     Debug.LogError("No hitscan projectile attached to projectile");
-            //     DestroyImmediate(attack);
-            //     return;
-            // }
-            // hitscanProjectile.FireAtTarget(startPosition, enemy);
-            // hitscanProjectile.IgnoreCollision(LevelManager.instance.environmentColliders);
-            // PlayParticles(fireParticleSystem, startPosition, enemy.position);
+            Vector3 startPosition = firingPoint.position;
+            var hitscanProjectile = attack.GetComponent<HItscanProjectitle>();
+            if (hitscanProjectile == null)
+            {
+                Debug.LogError("No hitscan projectile attached to projectile");
+                DestroyImmediate(attack);
+                return;
+            }
+            hitscanProjectile.FireAtTarget(startPosition, enemy);
+            fireParticleSystem.Play();
         }
     }

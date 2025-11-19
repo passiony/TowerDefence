@@ -15,8 +15,14 @@ public class TowerLevel : MonoBehaviour
     public GameObject buildEffect;
     public LevelData levelData;
 
-    public void Initialize(Tower tower, object enemyLayerMask, object alignmentProvider)
+    Affector[] m_Affectors;
+
+    public void Initialize(Tower tower, LayerMask enemyLayerMask, ECamp camp)
     {
-        
+        m_Affectors = GetComponentsInChildren<Affector>();
+        foreach (Affector effect in m_Affectors)
+        {
+            effect.Initialize(camp, enemyLayerMask);
+        }
     }
 }

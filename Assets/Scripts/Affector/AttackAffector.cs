@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -30,8 +31,26 @@ public class AttackAffector : Affector
         towerTargetter.camp = affectorCamp;
         m_Launcher = GetComponent<ILauncher>();
         m_FireTimer = 1 / fireRate;
+
+        towerTargetter.findTarget += OnFindTarget;
+        towerTargetter.lostTarget += OnLostTarget;
     }
-    
+
+    private void OnDestroy()
+    {
+        towerTargetter.findTarget -= OnFindTarget;
+        towerTargetter.lostTarget -= OnLostTarget;
+    }
+
+    private void OnFindTarget(Targetable obj)
+    {
+        m_TrackingEnemy = obj;
+    }
+    private void OnLostTarget()
+    {
+        m_TrackingEnemy = null;
+    }
+
     protected virtual void Update()
     {
         m_FireTimer -= Time.deltaTime;

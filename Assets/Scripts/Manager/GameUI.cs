@@ -42,7 +42,6 @@ public class GameUI : MonoSingleton<GameUI>
             int layerMask = LayerMask.GetMask("PlacementLayer", "Default");
             if (Physics.Raycast(ray, out RaycastHit hit, 100, layerMask))
             {
-                Debug.Log(hit.collider.name);
                 m_CurrentTower.transform.position = hit.point;
 
                 m_CurrentArea = hit.collider.GetComponent<TowerPlacementGrid>();
@@ -53,7 +52,7 @@ public class GameUI : MonoSingleton<GameUI>
                     m_IsFitArea = m_CurrentArea.Fits(m_GridPosition, dimensions);
                     m_CurrentTower.Move(m_CurrentArea.GridToWorld(m_GridPosition, dimensions),
                         m_CurrentArea.transform.rotation, m_IsFitArea);
-
+                    
                     //点击防止炮塔
                     if (Input.GetMouseButtonDown(0))
                     {

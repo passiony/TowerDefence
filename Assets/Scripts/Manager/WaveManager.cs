@@ -27,7 +27,7 @@ public class WaveManager : MonoBehaviour
     public event Action waveChanged;
     public event Action spawningCompleted;
 
-    private void Start()
+    public void StartWave()
     {
         m_Index = 0;
         StartNext();
