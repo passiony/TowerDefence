@@ -10,6 +10,7 @@ public class LevelManager : MonoSingleton<LevelManager>
     public override void Init()
     {
         base.Init();
+        Application.targetFrameRate = 60;
         currency = new Currency(startingCurrency);
     }
 }

@@ -17,6 +17,7 @@ public abstract class Launcher : MonoBehaviour, ILauncher
             currentFiringPointIndex = (currentFiringPointIndex + 1) % firingPointLength;
 
             var bullet = Instantiate(attack);
+            bullet.transform.position = firingPoint.position;
             Launch(enemy, bullet, firingPoint);
         }
     }
