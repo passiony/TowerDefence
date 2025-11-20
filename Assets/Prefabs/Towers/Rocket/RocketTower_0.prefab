@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4699037271655918}
   - component: {fileID: 136830690140104794}
+  - component: {fileID: 7088799845027883167}
   m_Layer: 15
   m_Name: Targetter
   m_TagString: Untagged
@@ -131,6 +132,21 @@ CapsuleCollider:
   m_Height: 20
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7088799845027883167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300182006533744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921b183015034fc42ace5ca52d1a444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 4641205055848048}
+  camp: 0
+  searchRate: 1
 --- !u!1 &1361402013487122
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54561013ccd44843bb451eeecda08f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildEffect: {fileID: 0}
+  buildEffect: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68,
+    type: 3}
   levelData:
     cost: 1
     sell: 1
@@ -476,6 +493,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4125943955397988}
   - component: {fileID: 82622574690679042}
+  - component: {fileID: 2230679195814478337}
+  - component: {fileID: 2721283016205081766}
   m_Layer: 10
   m_Name: Affector
   m_TagString: Untagged
@@ -595,3 +614,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &2230679195814478337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998751838029820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79a9d5ecd9b4e6d9d7491bf7ae6d06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1593046666255972, guid: c11a889ae581148039036a639c0ab779, type: 3}
+  projectilePoints:
+  - {fileID: 4357798972921266}
+  isMultiAttack: 0
+  fireRate: 1
+  towerTargetter: {fileID: 7088799845027883167}
+--- !u!114 &2721283016205081766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998751838029820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986d6b9f78fc483a856f6611ca599916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireParticleSystem: {fileID: 0}

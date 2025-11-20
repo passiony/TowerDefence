@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4694364190876084}
   - component: {fileID: 136628825438276928}
+  - component: {fileID: 8614844034859329480}
   m_Layer: 15
   m_Name: Targetter
   m_TagString: Untagged
@@ -46,6 +47,21 @@ CapsuleCollider:
   m_Height: 24
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8614844034859329480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113961800079784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921b183015034fc42ace5ca52d1a444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 4888652836128650}
+  camp: 0
+  searchRate: 1
 --- !u!1 &1122110145662594
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +103,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4460882566492166}
   - component: {fileID: 82826926821789154}
+  - component: {fileID: 6647459341875282973}
+  - component: {fileID: 7311906160344700351}
   m_Layer: 10
   m_Name: Affector
   m_TagString: Untagged
@@ -206,6 +224,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &6647459341875282973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158233648976064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986d6b9f78fc483a856f6611ca599916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireParticleSystem: {fileID: 0}
+--- !u!114 &7311906160344700351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158233648976064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79a9d5ecd9b4e6d9d7491bf7ae6d06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1593046666255972, guid: 54b285bba65f94d6a81db3f9c67f5797, type: 3}
+  projectilePoints:
+  - {fileID: 4338282839285484}
+  - {fileID: 4502731117030874}
+  - {fileID: 4836723780798740}
+  isMultiAttack: 0
+  fireRate: 1
+  towerTargetter: {fileID: 8614844034859329480}
 --- !u!1 &1255991809813172
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54561013ccd44843bb451eeecda08f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildEffect: {fileID: 0}
+  buildEffect: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68,
+    type: 3}
   levelData:
     cost: 1
     sell: 1

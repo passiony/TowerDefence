@@ -616,17 +616,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05998da67a04174ac6372ca52dc8647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  configuration:
+    maxHealth: 0
+    startingHealth: 0
+    camp: 0
+  targetTransform: {fileID: 0}
   towerName: 
-  MaxHP: 0
-  HP: 0
-  level: 0
+  dimensions: {x: 2, y: 2}
   towerGhostPrefab: {fileID: 775019023329221614, guid: 7b178c9d97ec54b49b7599e7f7560475,
     type: 3}
   levels:
   - {fileID: 5678419485808706907, guid: ec315e78452fd456db9e789f88989b97, type: 3}
   - {fileID: -1688730657873689698, guid: c9e418a92827544b2a387ff2938291ec, type: 3}
   - {fileID: -7326027477587471100, guid: d8faacfa67b8d4af8b5a81028390f02b, type: 3}
-  Dimensions: {x: 0, y: 0}
-  enemyMask:
+  enemyLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 18432

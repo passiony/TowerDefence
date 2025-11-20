@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54561013ccd44843bb451eeecda08f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildEffect: {fileID: 0}
+  buildEffect: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68,
+    type: 3}
   levelData:
     cost: 1
     sell: 1
@@ -28989,7 +28990,6 @@ MonoBehaviour:
   projectilePoints:
   - {fileID: 4575828760328406}
   - {fileID: 4195283445768172}
-  epicenter: {fileID: 4221898185616454}
   isMultiAttack: 0
   fireRate: 8
   towerTargetter: {fileID: 4507666365072840550}
@@ -34017,8 +34017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turret: {fileID: 4221898185616454}
   camp: 0
-  m_TargetsInRange: []
-  searchRate: 0
+  searchRate: 1
 --- !u!1 &1892472432189134
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54561013ccd44843bb451eeecda08f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildEffect: {fileID: 0}
+  buildEffect: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68,
+    type: 3}
   levelData:
     cost: 0
     sell: 0
@@ -177,6 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4426900634282998}
+  - component: {fileID: 7303645024441997167}
   m_Layer: 10
   m_Name: Affector
   m_TagString: Untagged
@@ -199,6 +201,21 @@ Transform:
   m_Father: {fileID: 4064439936423624}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7303645024441997167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583171378262902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405f059ecc1474ba54ab996fa216c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowEffect: {fileID: 1202038136039314, guid: 2a2145ba402264aca9c0deb7d222e5bc, type: 3}
+  towerTargetter: {fileID: 7293977044504604328}
+  slowFactor: 0.5
 --- !u!1 &1751241635366000
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +227,7 @@ GameObject:
   - component: {fileID: 4258173200443278}
   - component: {fileID: 54954052437601860}
   - component: {fileID: 136802984214141268}
+  - component: {fileID: 7293977044504604328}
   m_Layer: 10
   m_Name: Targetter
   m_TagString: Untagged
@@ -262,6 +280,21 @@ CapsuleCollider:
   m_Height: 20
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7293977044504604328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751241635366000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921b183015034fc42ace5ca52d1a444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 0}
+  camp: 0
+  searchRate: 1
 --- !u!1 &1932577520024318
 GameObject:
   m_ObjectHideFlags: 0
