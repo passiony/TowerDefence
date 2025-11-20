@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class Wave : MonoBehaviour
 {
@@ -30,6 +27,8 @@ public class Wave : MonoBehaviour
             m_CurrentIndex++;
             yield return new WaitForSeconds(instruction.delay);
         }
+        
+        completed?.Invoke();
     }
     
     protected virtual void SpawnAgent(GameObject agent, Node node)

@@ -13,14 +13,7 @@ public class Tower : Targetable
     public IPlacementArea placementArea { get; private set; }
     public int currentLevel{ get; protected set; }
     public TowerLevel currentTowerLevel{ get; protected set; }
-    public int purchaseCost
-    {
-        get { return levels[0].levelData.cost; }
-    }
-
-    private void Start()
-    {
-    }
+    public int purchaseCost => levels[0].levelData.cost;
 
     public void Initialize(TowerPlacementGrid targetArea, Vector2Int gridPos)
     {
