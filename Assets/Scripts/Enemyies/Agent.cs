@@ -9,10 +9,16 @@ public class Agent : Targetable
     public NodePath Path;
     private int nodeIndex;
     private bool startMove;
-    
+    public float originalMovementSpeed { get; private set; }
+    public NavMeshAgent navMeshNavMeshAgent
+    {
+        get { return m_NavMeshAgent; }
+        set { m_NavMeshAgent = value; }
+    }
     void Start()
     {
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
+        originalMovementSpeed = m_NavMeshAgent.speed;
         StartMove();
     }
     

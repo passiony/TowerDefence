@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
 
 /// <summary>
 /// 施加伤害的组件
 /// </summary>
-public class Damager : MonoBehaviour
+[Serializable]
+public class Damager
 {
-    public float damage;
+    public float damageAmout;
     public ECamp camp;
 }

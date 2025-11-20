@@ -11,8 +11,6 @@ public class AttackAffector : Affector
 
     public Transform[] projectilePoints;
 
-    public Transform epicenter;
-
     public bool isMultiAttack;
     
     public float fireRate;
@@ -77,10 +75,5 @@ public class AttackAffector : Affector
         {
             m_Launcher.Launch(m_TrackingEnemy, projectile, projectilePoints);
         }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(epicenter.position, towerTargetter.effectRadius);
     }
 }

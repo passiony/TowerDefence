@@ -24,5 +24,10 @@ public class TowerLevel : MonoBehaviour
         {
             effect.Initialize(camp, enemyLayerMask);
         }
+        
+        if (buildEffect != null)
+        {
+            Instantiate(buildEffect, tower.transform.position, Quaternion.identity);
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 /// 简单的IProjectile实现，用于直线飞行的抛射体，可选择性地受到m_Acceleration影响。
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
-public class LinearProjectile : MonoBehaviour, IProjectile
+public class LinearProjectile : Projectile
 {
     public float startSpeed;
 

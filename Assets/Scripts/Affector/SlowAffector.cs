@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
-    using Color = System.Drawing.Color;
+using UnityEngine.Serialization;
+using Color = System.Drawing.Color;
 
     public class SlowAffector:Affector
     {
         public  Color radiusEffectColor;
+
+        [FormerlySerializedAs("enterParticleSystem")] public GameObject slowEffect;
 
         public Targetter towerTargetter;
         
@@ -33,6 +36,11 @@
             {
                 return;
             }
+            var slowComponent = other.gameObject.AddComponent<AgentSlower>();
+            if (slowComponent != null)
+            {
+                slowComponent.Initialize(slowFactor,slowEffect);
+            }
         }
 
         /// <summary>
@@ -44,6 +52,12 @@
             if (searchable == null)
             {
                 return;
+            }
+            var slowComponent = other.gameObject.GetComponent<AgentSlower>();
+            if (slowComponent != null)
+            {
+                slowComponent.RemoveSlow(slowFactor);
+                Destroy(slowComponent);
             }
         }
     }

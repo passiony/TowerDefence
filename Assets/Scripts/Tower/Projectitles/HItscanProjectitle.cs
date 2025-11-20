@@ -1,16 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-public class HItscanProjectitle : MonoBehaviour
+public class HItscanProjectitle : Projectile
 {
     protected Targetable m_Enemy;
-    protected Damager m_Damager;
-
-    protected virtual void Awake()
-    {
-        m_Damager = GetComponent<Damager>();
-    }
-
 
     protected void DealDamage()
     {
@@ -18,8 +11,7 @@ public class HItscanProjectitle : MonoBehaviour
         {
             return;
         }
-
-        m_Enemy.TakeDamage(m_Damager.damage, m_Enemy.position, m_Damager.camp);
+        m_Enemy.TakeDamage(damager.damageAmout, m_Enemy.position, damager.camp);
         Destroy(gameObject);
     }
 

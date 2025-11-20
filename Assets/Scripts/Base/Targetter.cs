@@ -9,7 +9,7 @@ public class Targetter : MonoBehaviour
     public ECamp camp;
 
     protected Collider attachedCollider;
-    public List<Targetable> m_TargetsInRange = new List<Targetable>();
+    protected List<Targetable> m_TargetsInRange = new List<Targetable>();
     protected Targetable m_CurrrentTargetable;
 
     public event Action<Targetable> targetEntersRange;
@@ -143,11 +143,11 @@ public class Targetter : MonoBehaviour
 
     public void AimTurret()
     {
-        if (m_CurrrentTargetable == null)
+        if (m_CurrrentTargetable == null || turret == null)
         {
             return;
         }
-
+        
         Vector3 targetPosition = m_CurrrentTargetable.position;
         Vector3 direction = targetPosition - turret.position;
         Quaternion look = Quaternion.LookRotation(direction, Vector3.up);
@@ -155,7 +155,7 @@ public class Targetter : MonoBehaviour
         look.eulerAngles = lookEuler;
         turret.rotation = look;
     }
-    
+
     void OnTargetRemove()
     {
         lostTarget?.Invoke();
