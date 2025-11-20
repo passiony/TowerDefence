@@ -24363,7 +24363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4926809754854304}
   - component: {fileID: 135186272143134658}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Targetter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

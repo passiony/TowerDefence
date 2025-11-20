@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4952032072423588}
   - component: {fileID: 135970406641782650}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Targetter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

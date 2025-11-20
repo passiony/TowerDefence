@@ -130,6 +130,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4449653383266716}
   - component: {fileID: 82063799700527262}
+  - component: {fileID: 7350213068883588385}
+  - component: {fileID: 2907049501803059028}
   m_Layer: 10
   m_Name: Affector
   m_TagString: Untagged
@@ -249,6 +251,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &7350213068883588385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197411263669442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c60783be80804a6fb0b668dde52fb464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingAngle: 30
+--- !u!114 &2907049501803059028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197411263669442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79a9d5ecd9b4e6d9d7491bf7ae6d06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1871399813658942, guid: 81918ce99085f4a88b647234fc0f40f1, type: 3}
+  projectilePoints:
+  - {fileID: 4087311428207534}
+  - {fileID: 4720453727091356}
+  - {fileID: 4930524698921082}
+  - {fileID: 4224631157214890}
+  - {fileID: 4676041355084646}
+  isMultiAttack: 1
+  fireRate: 1
+  towerTargetter: {fileID: 7380009388016812647}
 --- !u!1 &1293292849323766
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4507517614208990}
   - component: {fileID: 135045529124237798}
+  - component: {fileID: 7380009388016812647}
   m_Layer: 10
   m_Name: Targetter
   m_TagString: Untagged
@@ -660,6 +698,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 16
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7380009388016812647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812292035156056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921b183015034fc42ace5ca52d1a444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 0}
+  camp: 0
+  searchRate: 1
 --- !u!1 &1824965994812092
 GameObject:
   m_ObjectHideFlags: 0
