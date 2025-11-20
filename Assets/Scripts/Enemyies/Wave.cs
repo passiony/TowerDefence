@@ -7,6 +7,7 @@ public class Wave : MonoBehaviour
     public SpawnInstruction[] spawnInstructions;
     private int m_CurrentIndex;
     private NodePath m_Path;
+    public event Action waveChanged;
     public event Action completed;
 
     public float progress => (float)m_CurrentIndex / spawnInstructions.Length;
@@ -25,6 +26,7 @@ public class Wave : MonoBehaviour
             var instruction = spawnInstructions[m_CurrentIndex];
             SpawnAgent(instruction.spawnPrefab, m_Path.GetNode(instruction.startNode));
             m_CurrentIndex++;
+            waveChanged?.Invoke();
             yield return new WaitForSeconds(instruction.delay);
         }
         

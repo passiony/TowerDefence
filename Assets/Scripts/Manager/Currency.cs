@@ -2,7 +2,7 @@
 
 public class Currency
 {
-    public int currentCurrency { get; private set; }
+    public int moneyAmout { get; private set; }
     
     public event Action currencyChanged;
 
@@ -18,7 +18,7 @@ public class Currency
 
     public bool CanAfford(int cost)
     {
-        return currentCurrency >= cost;
+        return moneyAmout >= cost;
     }
 
     public bool TryPurchase(int cost)
@@ -28,13 +28,13 @@ public class Currency
             return false;
         }
 
-        ChangeCurrency(cost);
+        ChangeCurrency(-cost);
         return true;
     }
 
     private void ChangeCurrency(int increment)
     {
-        currentCurrency += increment;
+        moneyAmout += increment;
         currencyChanged?.Invoke();
     }
 }

@@ -39,6 +39,10 @@ public class WaveManager : MonoBehaviour
         {
             SpawnWave();
         }
+        else
+        {
+            spawningCompleted?.Invoke();
+        }
     }
 
     protected virtual void SpawnWave()
@@ -46,11 +50,17 @@ public class WaveManager : MonoBehaviour
         var wave = waves[m_Index];
         wave.StartWave(m_NodePath);
         wave.completed += OnWaveCompleted;
-        m_Index++;
+        wave.waveChanged += OnWaveChange;
+    }
+
+    private void OnWaveChange()
+    {
+        waveChanged?.Invoke();
     }
 
     private void OnWaveCompleted()
     {
+        m_Index++;
         StartNext();
     }
 }
