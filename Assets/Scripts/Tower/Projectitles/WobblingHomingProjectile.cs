@@ -11,7 +11,6 @@ public class WobblingHomingProjectile : HomingProjectile
         Targeting
     }
 
-    public float startSpeed;
     public Vector2 wobbleTimeRange = new(1, 2);
     public float wobbleDirectionChangeSpeed = 4;
     public float wobbleMagnitude = 7;
@@ -28,26 +27,16 @@ public class WobblingHomingProjectile : HomingProjectile
 
     protected void Update()
     {
-        // regular HomingLinearProjectile behaviour, handles a null homing target
-        if (m_HomingTarget == null || m_State == State.Targeting)
+        if (m_HomingTarget == null)
         {
-            if (m_HomingTarget == null)
-            {
-                m_Rigidbody.rotation = Quaternion.LookRotation(m_Rigidbody.velocity);
-                return;
-            }
-
-            var heading = m_HomingTarget.position - transform.position;
-            Quaternion aimDirection = Quaternion.LookRotation(heading);
-
-            m_Rigidbody.rotation = aimDirection;
-            m_Rigidbody.velocity = transform.forward * m_Rigidbody.velocity.magnitude;
+            m_Rigidbody.rotation = Quaternion.LookRotation(m_Rigidbody.velocity);
             return;
         }
-
+        
         switch (m_State)
         {
             case State.Wobbling:
+            {
                 m_CurrentWobbleTime += Time.deltaTime;
                 if (m_CurrentWobbleTime >= m_WobbleDuration)
                 {
@@ -68,7 +57,9 @@ public class WobblingHomingProjectile : HomingProjectile
                 m_Rigidbody.velocity = Quaternion.Euler(m_WobbleVector) * m_Rigidbody.velocity;
                 m_Rigidbody.rotation = Quaternion.LookRotation(m_Rigidbody.velocity);
                 break;
+            }
             case State.Turning:
+            {
                 m_CurrentTurnTime += Time.deltaTime;
                 var heading = m_HomingTarget.position - transform.position;
                 Quaternion aimDirection = Quaternion.LookRotation(heading);
@@ -81,8 +72,17 @@ public class WobblingHomingProjectile : HomingProjectile
                 {
                     m_State = State.Targeting;
                 }
-
+            }
                 break;
+            case State.Targeting:
+            {
+                var heading = m_HomingTarget.position - transform.position;
+                Quaternion aimDirection = Quaternion.LookRotation(heading);
+
+                m_Rigidbody.rotation = aimDirection;
+                m_Rigidbody.velocity = transform.forward * m_Rigidbody.velocity.magnitude;
+                break;
+            }
         }
     }
 

@@ -53,7 +53,7 @@ public class GameUI : MonoSingleton<GameUI>
                     m_CurrentTower.Move(m_CurrentArea.GridToWorld(m_GridPosition, dimensions),
                         m_CurrentArea.transform.rotation, m_IsFitArea);
                     
-                    //点击防止炮塔
+                    //点击放置炮塔
                     if (Input.GetMouseButtonDown(0))
                     {
                         TryPlaceTower();

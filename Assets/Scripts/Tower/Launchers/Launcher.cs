@@ -7,12 +7,14 @@ public abstract class Launcher : MonoBehaviour, ILauncher
 
     public virtual void Launch(List<Targetable> enemies, GameObject attack, Transform[] firingPoints)
     {
-        int count = enemies.Count;
+        int enemyIndex = 0;
+        int enemyCount = enemies.Count;
         int currentFiringPointIndex = 0;
         int firingPointLength = firingPoints.Length;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < firingPointLength; i++)
         {
-            Targetable enemy = enemies[i];
+            Targetable enemy = enemies[enemyIndex];
+            enemyIndex = (enemyIndex + 1) % enemyCount;
             Transform firingPoint = firingPoints[currentFiringPointIndex];
             currentFiringPointIndex = (currentFiringPointIndex + 1) % firingPointLength;
 

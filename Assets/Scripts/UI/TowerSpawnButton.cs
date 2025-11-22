@@ -36,7 +36,6 @@ public class TowerSpawnButton : MonoBehaviour
         var level = towerData.levels[0];
         towerIcon.sprite = level.levelData.icon;
         enegyText.text = level.levelData.cost.ToString();
-
     }
 
     void UpdateButton()

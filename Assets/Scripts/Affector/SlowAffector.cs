@@ -6,7 +6,7 @@ using Color = System.Drawing.Color;
     {
         public  Color radiusEffectColor;
 
-        [FormerlySerializedAs("enterParticleSystem")] public GameObject slowEffect;
+        public GameObject slowEffect;
 
         public Targetter towerTargetter;
         

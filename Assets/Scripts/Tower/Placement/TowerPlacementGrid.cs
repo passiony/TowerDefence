@@ -46,7 +46,9 @@ public class TowerPlacementGrid : MonoBehaviour, IPlacementArea
     {
         Vector3 location = transform.InverseTransformPoint(worldPosition);
         location /= gridSize;
+        //炮塔尺寸一半
         var offset = new Vector3(size.x * 0.5f, 0, size.y * 0.5f);
+        //计算原点（左上角）
         location -= offset;
         int xPos = Mathf.RoundToInt(location.x);
         int yPos = Mathf.RoundToInt(location.z);
@@ -112,7 +114,20 @@ public class TowerPlacementGrid : MonoBehaviour, IPlacementArea
 
     public void Clear(Vector2Int gridPos, Vector2Int size)
     {
+        Vector2Int extents = gridPos + size;
         
+        // Fill those positions
+        for (int y = gridPos.y; y < extents.y; y++)
+        {
+            for (int x = gridPos.x; x < extents.x; x++)
+            {
+                m_AvailableCells[x, y] = false;
+                if (m_Tiles != null && m_Tiles[x, y] != null)
+                {
+                    m_Tiles[x, y].SetState(false);
+                }
+            }
+        }
     }
 
     void OnValidate()
